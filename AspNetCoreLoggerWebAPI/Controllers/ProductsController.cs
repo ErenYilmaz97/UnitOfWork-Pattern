@@ -12,21 +12,21 @@ namespace AspNetCoreLoggerWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class ProductsController : ControllerBase
     {
 
         private readonly IProductService _productService;
 
         //DI
-        public ProductController(IProductService productService)
+        public ProductsController(IProductService productService)
         {
             _productService = productService;
         }
 
 
 
-        [HttpGet("Products")]
-        public IActionResult Products()
+        [HttpGet]
+        public IActionResult Get()
         {
             var result = _productService.GetAll();
 
@@ -41,8 +41,8 @@ namespace AspNetCoreLoggerWebAPI.Controllers
 
 
 
-        [HttpPost("AddProduct")]
-        public IActionResult AddProduct(Product product)
+        [HttpPost]
+        public IActionResult Post(Product product)
         {
             var result = _productService.Add(product);
 
@@ -57,8 +57,8 @@ namespace AspNetCoreLoggerWebAPI.Controllers
 
 
 
-        [HttpPost("AddProducts")]
-        public IActionResult AddProducts(List<Product> products)
+        [HttpPost("AddRange")]
+        public IActionResult Post(List<Product> products)
         {
             var result = _productService.AddRange(products);
 
@@ -105,8 +105,8 @@ namespace AspNetCoreLoggerWebAPI.Controllers
 
 
 
-        [HttpPut("Update")]
-        public IActionResult UpdateProduct(Product product)
+        [HttpPut]
+        public IActionResult Put(Product product)
         {
             var result = _productService.Update(product);
 
@@ -117,6 +117,42 @@ namespace AspNetCoreLoggerWebAPI.Controllers
 
             return BadRequest(result.Message);
         }
+
+
+
+
+        [HttpGet("Name/{productName}")]
+        public IActionResult Get(string productName)
+        {
+            var result = _productService.GetByName(productName);
+
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+
+            return BadRequest(result.Message);
+        }
+
+
+
+
+        [HttpGet("Category/{categoryID}")]
+        public IActionResult Get(int categoryID)
+        {
+            var result = _productService.GetByCategory(categoryID);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+
+            return BadRequest(result.Message);
+        }
+
+
+
+
+       
 
     }
 }

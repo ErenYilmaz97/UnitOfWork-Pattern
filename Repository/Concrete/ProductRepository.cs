@@ -19,6 +19,8 @@ namespace Repository.Concrete
         }
 
 
+
+
         public List<Product> GetByCategory(int categoryID)
         {
             return _context.Products.Where(x => x.CategoryID == categoryID).ToList();
@@ -28,7 +30,14 @@ namespace Repository.Concrete
 
         public Product GetByName(string productName)
         {
-            return _context.Products.Where(x => x.Name.ToLower().Contains(productName.ToLower())).FirstOrDefault();
+            try
+            {
+                return _context.Products.Where(x => x.Name.ToLower() == productName.ToLower()).FirstOrDefault();
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

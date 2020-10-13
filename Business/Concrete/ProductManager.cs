@@ -26,18 +26,20 @@ namespace Business.Concrete
         }
 
 
+
+
         public IResult Add(Product product)
         {
             var validateResult = _validator.Validate(product);
 
             if (!validateResult.IsValid)
             {
-                return new ErrorResult(){Success = false, Message = validateResult.Errors.FirstOrDefault().ErrorMessage};
+                return new ErrorResult(validateResult.Errors.FirstOrDefault().ErrorMessage);
             }
 
             if (_unitOfWork._productRepository.GetByName(product.Name) != null)
             {
-                return new ErrorResult(){Success = false, Message = "Bu İsimde Bir Ürün Zaten Bulunmakta."};
+                return new ErrorResult("Bu İsimde Bir Ürün Zaten Bulunmakta.");
             }
 
 
@@ -54,7 +56,7 @@ namespace Business.Concrete
             _unitOfWork.Commit();
             //HATA OLUŞURSA EXCEPTİON HANDLER TARAFINDAN YAKALANIR, HİÇBİR İŞLEM GERÇEKLEŞMEZ.
 
-            return new SuccessResult(){Success = true, Message = "Ürün Başarıyla Eklendi."};
+            return new SuccessResult("Ürün Başarıyla Eklendi.");
         }
 
 
@@ -62,11 +64,11 @@ namespace Business.Concrete
 
         public IResult AddRange(List<Product> products)
         {
-            var validateResult = ValidateProducts(products);
+            var validateResult = CheckProducts(products);
 
             if (!validateResult.Success)
             {
-                return new ErrorResult(){Success = false, Message = "Ürünler Doğrulanamadı."};
+                return validateResult;
             }
 
             _unitOfWork._productRepository.AddRange(products);
@@ -79,7 +81,7 @@ namespace Business.Concrete
             });
             _unitOfWork.Commit();
 
-            return new SuccessResult(){Success = true, Message = "Ürünler Başarıyla Eklendi"};
+            return new SuccessResult("Ürünler Başarıyla Eklendi");
         }
 
 
@@ -91,7 +93,7 @@ namespace Business.Concrete
 
             if (findProduct == null)
             {
-                return new ErrorResult(){Success = false, Message = "Ürün Bulunamadı."};
+                return new ErrorResult("Ürün Bulunamadı.");
             }
 
             _unitOfWork._productRepository.Delete(findProduct);
@@ -105,7 +107,7 @@ namespace Business.Concrete
 
             _unitOfWork.Commit();
 
-            return new SuccessResult(){Success = true, Message = "Ürün Başarıyla Silindi."};
+            return new SuccessResult("Ürün Başarıyla Silindi.");
         }
 
 
@@ -113,7 +115,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetAll()
         {
-           return new SuccessDataResult<List<Product>>(){Success = true, Data = _unitOfWork._productRepository.GetAll()};
+           return new SuccessDataResult<List<Product>>(_unitOfWork._productRepository.GetAll());
         }
 
 
@@ -126,11 +128,11 @@ namespace Business.Concrete
 
             if (findProduct == null)
             {
-                return new ErrorDataResult<Product>(){Success = false, Message = "Ürün Bulunamadı."};
+                return new ErrorDataResult<Product>("Ürün Bulunamadı.");
             }
 
 
-            return new SuccessDataResult<Product>(){Success = true, Data = findProduct};
+            return new SuccessDataResult<Product>(findProduct);
         }
 
 
@@ -148,7 +150,7 @@ namespace Business.Concrete
 
             if (_unitOfWork._productRepository.GetByName(product.Name) != null)
             {
-                return new ErrorResult(){Success = false, Message = "Bu İsimde Bir Ürün Bulunmakta (Update)"};
+                return new ErrorResult("Bu İsimde Bir Ürün Bulunmakta (Update)");
             }
 
 
@@ -163,22 +165,62 @@ namespace Business.Concrete
             });
             _unitOfWork.Commit();
 
-            return new SuccessResult(){Success = true, Message = "Ürün Başarıyla Güncellendi"};
+            return new SuccessResult("Ürün Başarıyla Güncellendi");
 
         }
 
 
 
+        public IDataResult<Product> GetByName(string productName)
+        {
+            var product = _unitOfWork._productRepository.GetByName(productName);
 
-        private IResult ValidateProducts(List<Product> products)
+            if (product == null)
+            {
+                return new ErrorDataResult<Product>("Ürün Bulunamadı");
+            }
+
+            return new SuccessDataResult<Product>(product);
+        }
+
+
+
+
+        public IDataResult<List<Product>> GetByCategory(int categoryID)
+        {
+            //CATEGORY VAR MI KONTROLÜ
+
+            var products = _unitOfWork._productRepository.GetByCategory(categoryID);
+
+
+            if (products.Count() == 0)
+            {
+                return new ErrorDataResult<List<Product>>("Bu Kategoride Ürün Bulunamadı.");
+            }
+
+            return new SuccessDataResult<List<Product>>(products);
+        }
+
+
+
+
+
+        private IResult CheckProducts(List<Product> products)
         {
             foreach (Product product in products)
             {
                 var validateResult = _validator.Validate(product);
 
+
                 if (!validateResult.IsValid)
                 {
-                    return new ErrorResult(){Success = false};
+                    return new ErrorResult($"{product.Name} İsimli Ürün İçin : {validateResult.Errors.FirstOrDefault().ErrorMessage}");
+                }
+
+
+                if (_unitOfWork._productRepository.GetByName(product.Name) != null)
+                {
+                    return new ErrorResult($"{product.Name} İsimli Ürün Zaten Mevcut.");
                 }
             }
 
