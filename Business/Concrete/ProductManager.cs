@@ -188,7 +188,14 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetByCategory(int categoryID)
         {
-            //CATEGORY VAR MI KONTROLÜ
+            var category = _unitOfWork._categoryRepository.GetById(categoryID);
+
+
+            if (category == null)
+            {
+                return new ErrorDataResult<List<Product>>("Kategori Bulunamadı.");
+            }
+
 
             var products = _unitOfWork._productRepository.GetByCategory(categoryID);
 

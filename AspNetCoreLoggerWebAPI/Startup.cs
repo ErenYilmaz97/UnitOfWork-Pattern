@@ -41,14 +41,18 @@ namespace AspNetCoreLoggerWebAPI
             services.AddControllers();
 
 
+
+            //IoC
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<Core.Log.ILogger, DbLogger>();
             services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<ICategoryService, CategoryManager>();
 
 
             services.AddScoped<AbstractValidator<Product>, ProductValidator>();
+            services.AddScoped<AbstractValidator<Category>, CategoryValidator>();
         }
 
         

@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.Concrete;
+using Core.Log;
+using Core.Validations;
+using Entities;
 using Entities.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using Repository.Concrete;
+using Repository.UnıtOfWork.Concrete;
 
 namespace AspNetCoreLoggerWebAPI.Controllers
 {
@@ -14,9 +20,9 @@ namespace AspNetCoreLoggerWebAPI.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-
+        
         private readonly IProductService _productService;
-
+        
         //DI
         public ProductsController(IProductService productService)
         {

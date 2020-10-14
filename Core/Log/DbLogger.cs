@@ -43,11 +43,5 @@ namespace Core.Log
         }
 
 
-        public string SerializeListOfObjects(List<IEntity> entities)
-        {
-            return JsonSerializer.Serialize(entities);
-        }
-
-
     }
 }
