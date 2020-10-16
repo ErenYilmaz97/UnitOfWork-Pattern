@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Entities.Dto;
 using Entities.Entities;
 
 namespace Repository.Abstract
@@ -13,6 +14,7 @@ namespace Repository.Abstract
 
         Product GetByName(string productName);
         List<Product> GetByCategory(int categoryID);
-        List<Product> GetProductsWithCategory();
+        List<GetProductsWithCategoryDto> GetProductsWithCategory();
+
     }
 }

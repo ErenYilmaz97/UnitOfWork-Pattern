@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Entities.Dto;
 using Entities.Entities;
 
 namespace Business.Abstract
@@ -16,6 +17,6 @@ namespace Business.Abstract
         IResult Update(Product product);
         IDataResult<Product> GetByName(string productName);
         IDataResult<List<Product>> GetByCategory(int categoryID);
-        IDataResult<List<Product>> GetProductsWithCategory();
+        IDataResult<List<GetProductsWithCategoryDto>> GetProductsWithCategory();
     }
 }

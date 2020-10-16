@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Entities;
+using Entities.Dto;
 using Entities.Entities;
 using Microsoft.EntityFrameworkCore;
 using Repository.Abstract;
@@ -47,9 +48,17 @@ namespace Repository.Concrete
 
 
 
-        public List<Product> GetProductsWithCategory()
+        public List<GetProductsWithCategoryDto> GetProductsWithCategory()
         {
-            return _context.Products.Include(x=>x.Category).ToList();
+            return _context.Products.Include(x => x.Category).Select(x => new GetProductsWithCategoryDto()
+            {
+                ProductID = x.ProductID,
+                ProductName = x.Name,
+                Price = x.Price,
+                Stock = x.Stock,
+                CategoryID = x.CategoryID,
+                CategoryName = x.Category.Name
+            }).ToList();
         }
 
     }

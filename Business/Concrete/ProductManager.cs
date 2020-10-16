@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using Business.Abstract;
 using Core.Log;
 using Core.Results;
 using Core.Serilog;
+using Entities.Dto;
 using Entities.Entities;
 using Entities.Enums;
 using FluentValidation;
@@ -221,9 +223,12 @@ namespace Business.Concrete
 
 
 
-        public IDataResult<List<Product>> GetProductsWithCategory()
+        public IDataResult<List<GetProductsWithCategoryDto>> GetProductsWithCategory()
         {
-            return new SuccessDataResult<List<Product>>(_unitOfWork._productRepository.GetProductsWithCategory());
+            
+            return new SuccessDataResult<List<GetProductsWithCategoryDto>>(_unitOfWork._productRepository.GetProductsWithCategory());
+
+
         }
 
 
