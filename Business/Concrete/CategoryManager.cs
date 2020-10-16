@@ -14,6 +14,10 @@ namespace Business.Concrete
 {
     public class CategoryManager : ICategoryService
     {
+
+        //ENCAPSULATION İÇİN PRIVATE
+        //SADECE BU SINIF İÇERİSİNDEKİ METHOTLARDA KULLANILABİLİR, DIŞARIDAN ERİŞİLEMEZ.
+
         private readonly IUnitOfWork _unitOfWork;
         private readonly ILogger _logger;
         private readonly AbstractValidator<Category> _validator;
@@ -186,6 +190,13 @@ namespace Business.Concrete
         }
 
 
+
+
+
+        public IDataResult<List<Category>> GetCategoriesWithProducts()
+        {
+            return new SuccessDataResult<List<Category>>(_unitOfWork._categoryRepository.GetCategoriesWithProducts());
+        }
 
 
 

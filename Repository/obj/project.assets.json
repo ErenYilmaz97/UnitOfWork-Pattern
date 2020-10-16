@@ -8427,9 +8427,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj",
-      "projectName": "Repository",
-      "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\DataAccess.csproj",
+      "projectName": "DataAccess",
+      "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\eren_\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\obj\\",
       "projectStyle": "PackageReference",

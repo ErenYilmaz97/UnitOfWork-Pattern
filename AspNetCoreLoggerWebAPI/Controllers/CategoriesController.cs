@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.Concrete;
+using Core.Log;
+using Core.Validations;
+using Entities;
 using Entities.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Repository.Concrete;
+using Repository.UnıtOfWork.Concrete;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace AspNetCoreLoggerWebAPI.Controllers
 {
@@ -142,6 +150,18 @@ namespace AspNetCoreLoggerWebAPI.Controllers
 
 
 
+        [HttpGet("WithProducts")]
+        public IActionResult GetCategoriesWithProducts()
+        {
+            var result = _categoryService.GetCategoriesWithProducts();
+
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+
+            return BadRequest("Kategoriler Listelenemedi");
+        }
     }
 
 

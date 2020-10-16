@@ -8,5 +8,6 @@ namespace Repository.Abstract
     public interface ICategoryRepository : IRepository<Category>
     {
         Category GetByName(string categoryName);
+        List<Category> GetCategoriesWithProducts();
     }
 }

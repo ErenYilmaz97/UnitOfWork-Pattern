@@ -13,5 +13,6 @@ namespace Repository.Abstract
 
         Product GetByName(string productName);
         List<Product> GetByCategory(int categoryID);
+        List<Product> GetProductsWithCategory();
     }
 }

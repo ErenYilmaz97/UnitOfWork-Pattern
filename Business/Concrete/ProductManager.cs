@@ -5,6 +5,7 @@ using System.Text;
 using Business.Abstract;
 using Core.Log;
 using Core.Results;
+using Core.Serilog;
 using Entities.Entities;
 using Entities.Enums;
 using FluentValidation;
@@ -17,12 +18,14 @@ namespace Business.Concrete
         private readonly IUnitOfWork _unitOfWork;
         private readonly ILogger _logger;
         private readonly AbstractValidator<Product> _validator;
+        private readonly ILogManager _logManager;
 
-        public ProductManager(IUnitOfWork unitOfWork, ILogger logger, AbstractValidator<Product> validator)
+        public ProductManager(IUnitOfWork unitOfWork, ILogger logger, AbstractValidator<Product> validator, ILogManager logManager)
         {
             _unitOfWork = unitOfWork;
             _logger = logger;
             _validator = validator;
+            _logManager = logManager;
         }
 
 
@@ -54,6 +57,9 @@ namespace Business.Concrete
             });
 
             _unitOfWork.Commit();
+
+
+            _logManager.GetLogger().Information("{@product}",product, LogType.Added);
             //HATA OLUŞURSA EXCEPTİON HANDLER TARAFINDAN YAKALANIR, HİÇBİR İŞLEM GERÇEKLEŞMEZ.
 
             return new SuccessResult("Ürün Başarıyla Eklendi.");
@@ -80,6 +86,8 @@ namespace Business.Concrete
                 LogData = _logger.SerializeObject(products)
             });
             _unitOfWork.Commit();
+
+            _logManager.GetLogger().Information("{@product}", products, LogType.Added);
 
             return new SuccessResult("Ürünler Başarıyla Eklendi");
         }
@@ -212,6 +220,16 @@ namespace Business.Concrete
 
 
 
+
+        public IDataResult<List<Product>> GetProductsWithCategory()
+        {
+            return new SuccessDataResult<List<Product>>(_unitOfWork._productRepository.GetProductsWithCategory());
+        }
+
+
+
+
+
         private IResult CheckProducts(List<Product> products)
         {
             foreach (Product product in products)
@@ -233,5 +251,10 @@ namespace Business.Concrete
 
             return new SuccessResult(){Success = true};
         }
+
+
+
+
+        
     }
 }

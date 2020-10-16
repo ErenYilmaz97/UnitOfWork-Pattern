@@ -158,6 +158,21 @@ namespace AspNetCoreLoggerWebAPI.Controllers
 
 
 
+        [HttpGet("WithCategory")]
+        public IActionResult GetProductsWithCategory()
+        {
+            var result = _productService.GetProductsWithCategory();
+
+            if (result.Success)
+            {
+                return Ok(result.Data.First().Category);
+            }
+
+            return BadRequest("Ürünler Listelenemedi");
+        }
+
+
+
        
 
     }

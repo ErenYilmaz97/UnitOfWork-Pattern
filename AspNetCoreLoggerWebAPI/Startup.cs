@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Concrete;
-using Core.Log;
+using Core.Results;
+using Core.Serilog;
 using Core.Validations;
 using Entities;
 using Entities.Entities;
@@ -21,6 +22,7 @@ using Repository.Abstract;
 using Repository.Concrete;
 using Repository.UnýtOfWork.Abstract;
 using Repository.UnýtOfWork.Concrete;
+using DbLogger = Core.Log.DbLogger;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace AspNetCoreLoggerWebAPI
@@ -37,7 +39,10 @@ namespace AspNetCoreLoggerWebAPI
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(x=>x.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
+            services.AddDbContext<AppDbContext>(x=>
+            {
+                x.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString"));
+            });
             services.AddControllers();
 
 
@@ -53,6 +58,8 @@ namespace AspNetCoreLoggerWebAPI
 
             services.AddScoped<AbstractValidator<Product>, ProductValidator>();
             services.AddScoped<AbstractValidator<Category>, CategoryValidator>();
+
+            services.AddScoped<ILogManager, SerilogDbLogger>();
         }
 
         

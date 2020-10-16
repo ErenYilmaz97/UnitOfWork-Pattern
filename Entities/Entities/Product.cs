@@ -15,6 +15,6 @@ namespace Entities.Entities
         public int Stock { get; set; }
         public int CategoryID { get; set; }
 
-        public Category Category { get; set; }
+        virtual public Category Category { get; set; }
     }
 }

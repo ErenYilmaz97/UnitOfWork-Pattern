@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Entities;
 using Entities.Entities;
+using Microsoft.EntityFrameworkCore;
 using Repository.Abstract;
 
 namespace Repository.Concrete
@@ -28,6 +29,8 @@ namespace Repository.Concrete
 
 
 
+
+
         public Product GetByName(string productName)
         {
             try
@@ -39,5 +42,15 @@ namespace Repository.Concrete
                 return null;
             }
         }
+
+
+
+
+
+        public List<Product> GetProductsWithCategory()
+        {
+            return _context.Products.Include(x => x.Category).ToList();
+        }
+
     }
 }

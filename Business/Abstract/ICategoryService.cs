@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Core.Results;
 using Entities.Entities;
+using Repository.UnıtOfWork.Abstract;
 
 namespace Business.Abstract
 {
@@ -13,6 +14,8 @@ namespace Business.Abstract
         IResult Update(Category category);
         IDataResult<Category> GetByName(string categoryName);
         IResult AddRange(List<Category> categories);
+        IDataResult<List<Category>> GetCategoriesWithProducts();
+
 
     }
 }

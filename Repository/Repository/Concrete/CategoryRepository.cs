@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Entities;
 using Entities.Entities;
+using Microsoft.EntityFrameworkCore;
 using Repository.Abstract;
 
 namespace Repository.Concrete
@@ -24,6 +25,13 @@ namespace Repository.Concrete
         public Category GetByName(string categoryName)
         {
             return _context.Categories.Where(x => x.Name.ToLower() == categoryName.ToLower()).FirstOrDefault();
+        }
+
+
+
+        public List<Category> GetCategoriesWithProducts()
+        {
+            return _context.Categories.Include(x => x.Products).ToList();
         }
     }
 }
