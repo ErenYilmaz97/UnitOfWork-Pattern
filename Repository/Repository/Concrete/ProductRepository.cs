@@ -49,7 +49,7 @@ namespace Repository.Concrete
 
         public List<Product> GetProductsWithCategory()
         {
-            return _context.Products.Include(x => x.Category).ToList();
+            return _context.Products.Include(x=>x.Category).ToList();
         }
 
     }

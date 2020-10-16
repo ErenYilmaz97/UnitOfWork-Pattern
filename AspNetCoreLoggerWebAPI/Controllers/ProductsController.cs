@@ -38,7 +38,7 @@ namespace AspNetCoreLoggerWebAPI.Controllers
 
             if (result.Success)
             {
-                return Ok(result.Data);
+                return Ok(result);
             }
 
             return BadRequest("Ürünler Listelenemedi.");
@@ -162,10 +162,11 @@ namespace AspNetCoreLoggerWebAPI.Controllers
         public IActionResult GetProductsWithCategory()
         {
             var result = _productService.GetProductsWithCategory();
+            
 
             if (result.Success)
             {
-                return Ok(result.Data.First().Category);
+                return Ok(result.Data);
             }
 
             return BadRequest("Ürünler Listelenemedi");

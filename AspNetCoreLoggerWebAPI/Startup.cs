@@ -24,6 +24,8 @@ using Repository.UnýtOfWork.Abstract;
 using Repository.UnýtOfWork.Concrete;
 using DbLogger = Core.Log.DbLogger;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
+using Newtonsoft;
+using Newtonsoft.Json;
 
 namespace AspNetCoreLoggerWebAPI
 {
@@ -39,6 +41,14 @@ namespace AspNetCoreLoggerWebAPI
         
         public void ConfigureServices(IServiceCollection services)
         {
+
+
+            services.AddMvc().AddNewtonsoftJson(o =>
+            {
+                o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
+
+
             services.AddDbContext<AppDbContext>(x=>
             {
                 x.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString"));
@@ -60,6 +70,8 @@ namespace AspNetCoreLoggerWebAPI
             services.AddScoped<AbstractValidator<Category>, CategoryValidator>();
 
             services.AddScoped<ILogManager, SerilogDbLogger>();
+
+
         }
 
         
