@@ -228,9 +228,24 @@ namespace Business.Concrete
             
             return new SuccessDataResult<List<GetProductsWithCategoryDto>>(_unitOfWork._productRepository.GetProductsWithCategory());
 
-
         }
 
+
+
+
+        public IDataResult<GetProductsWithCategoryDto> GetProductWithCategory(int ProductID)
+        {
+            var product = _unitOfWork._productRepository.GetProductsWithCategory().Where(x => x.ProductID == ProductID).FirstOrDefault();
+
+            if (product == null)
+            {
+                return new ErrorDataResult<GetProductsWithCategoryDto>("Ürün Bulunamadı");
+            }
+
+
+            return new SuccessDataResult<GetProductsWithCategoryDto>(product);
+                
+        }
 
 
 

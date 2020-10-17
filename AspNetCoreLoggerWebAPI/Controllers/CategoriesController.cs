@@ -162,6 +162,22 @@ namespace AspNetCoreLoggerWebAPI.Controllers
 
             return BadRequest("Kategoriler Listelenemedi");
         }
+
+
+
+
+        [HttpGet("{categoryId}/WithProducts")]
+        public IActionResult GetCategoryWithProducts(int categoryId)
+        {
+            var result = _categoryService.GetCategoryWithProducts(categoryId);
+
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+
+            return BadRequest(result.Message);
+        }
     }
 
 

@@ -8,6 +8,7 @@ using Core.Results;
 using Entities.Entities;
 using Entities.Enums;
 using FluentValidation;
+using Microsoft.AspNetCore.Components.Forms;
 using Repository.UnıtOfWork.Abstract;
 
 namespace Business.Concrete
@@ -197,6 +198,25 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Category>>(_unitOfWork._categoryRepository.GetCategoriesWithProducts());
         }
+
+
+
+
+
+        public IDataResult<Category> GetCategoryWithProducts(int categoryId)
+        {
+            var category = _unitOfWork._categoryRepository.GetCategoriesWithProducts().Where(x => x.CategoryID == categoryId).FirstOrDefault();
+
+            if (category == null)
+            {
+                return new ErrorDataResult<Category>("Kategori Bulunamadı");
+            }
+
+            return new SuccessDataResult<Category>(category);
+        }
+
+
+
 
 
 

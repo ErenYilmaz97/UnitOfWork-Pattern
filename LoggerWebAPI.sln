@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{3477C2C1-7ECA-48D7-B16E-26641C877EDC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "Repository\DataAccess.csproj", "{5CDE01CF-6000-43A3-BE12-B35D991D8C35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{5CDE01CF-6000-43A3-BE12-B35D991D8C35}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{0F09DE98-790E-4319-9768-5C257FF988C8}"
 EndProject

@@ -9,7 +9,7 @@
       "Business/1.0.0": {
         "dependencies": {
           "Core": "1.0.0",
-          "DataAccess": "1.0.0"
+          "Repository": "1.0.0"
         },
         "runtime": {
           "Business.dll": {}
@@ -2081,14 +2081,6 @@
           "Core.dll": {}
         }
       },
-      "DataAccess/1.0.0": {
-        "dependencies": {
-          "Entities": "1.0.0"
-        },
-        "runtime": {
-          "DataAccess.dll": {}
-        }
-      },
       "Entities/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.8",
@@ -2096,6 +2088,14 @@
         },
         "runtime": {
           "Entities.dll": {}
+        }
+      },
+      "Repository/1.0.0": {
+        "dependencies": {
+          "Entities": "1.0.0"
+        },
+        "runtime": {
+          "Repository.dll": {}
         }
       }
     }
@@ -3385,12 +3385,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "DataAccess/1.0.0": {
+    "Entities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Entities/1.0.0": {
+    "Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -15,6 +15,8 @@ namespace Business.Abstract
         IDataResult<Category> GetByName(string categoryName);
         IResult AddRange(List<Category> categories);
         IDataResult<List<Category>> GetCategoriesWithProducts();
+        IDataResult<Category> GetCategoryWithProducts(int categoryId);
+
 
 
     }

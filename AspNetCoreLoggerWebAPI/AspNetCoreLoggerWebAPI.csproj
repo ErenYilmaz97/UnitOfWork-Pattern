@@ -23,7 +23,7 @@
     <ProjectReference Include="..\Business\Business.csproj" />
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Entities\Entities.csproj" />
-    <ProjectReference Include="..\Repository\DataAccess.csproj" />
+    <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
 

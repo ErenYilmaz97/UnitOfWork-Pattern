@@ -2973,19 +2973,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "DataAccess/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Entities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DataAccess.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataAccess.dll": {}
-        }
-      },
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -2998,6 +2985,19 @@
         },
         "runtime": {
           "bin/placeholder/Entities.dll": {}
+        }
+      },
+      "Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository.dll": {}
         }
       }
     }
@@ -9377,21 +9377,21 @@
       "path": "../Core/Core.csproj",
       "msbuildProject": "../Core/Core.csproj"
     },
-    "DataAccess/1.0.0": {
-      "type": "project",
-      "path": "../Repository/DataAccess.csproj",
-      "msbuildProject": "../Repository/DataAccess.csproj"
-    },
     "Entities/1.0.0": {
       "type": "project",
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
+    },
+    "Repository/1.0.0": {
+      "type": "project",
+      "path": "../Repository/Repository.csproj",
+      "msbuildProject": "../Repository/Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Core >= 1.0.0",
-      "DataAccess >= 1.0.0"
+      "Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9428,8 +9428,8 @@
             "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj": {
               "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj"
             },
-            "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\DataAccess.csproj"
+            "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj"
             }
           }
         }

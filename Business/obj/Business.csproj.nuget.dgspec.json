@@ -34,8 +34,8 @@
               "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj": {
                 "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj"
               },
-              "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\DataAccess.csproj"
+              "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj"
               }
             }
           }
@@ -229,12 +229,12 @@
         }
       }
     },
-    "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\DataAccess.csproj": {
+    "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\DataAccess.csproj",
-        "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj",
+        "projectName": "Repository",
+        "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\eren_\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\obj\\",
         "projectStyle": "PackageReference",

@@ -153,11 +153,11 @@ C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\ne
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Serilog.Sinks.MSSqlServer.dll
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Serilog.Sinks.PeriodicBatching.dll
-C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\DataAccess.dll
-C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\DataAccess.pdb
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\obj\Debug\netcoreapp3.1\AspNetCoreLoggerWebAPI.csproj.CoreCompileInputs.cache
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\obj\Debug\netcoreapp3.1\AspNetCoreLoggerWebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\obj\Debug\netcoreapp3.1\AspNetCoreLoggerWebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Repository.dll
+C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Repository.pdb

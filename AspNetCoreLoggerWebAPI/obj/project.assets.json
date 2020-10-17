@@ -3028,7 +3028,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Core": "1.0.0",
-          "DataAccess": "1.0.0"
+          "Repository": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Business.dll": {}
@@ -3060,19 +3060,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "DataAccess/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Entities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DataAccess.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataAccess.dll": {}
-        }
-      },
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -3085,6 +3072,19 @@
         },
         "runtime": {
           "bin/placeholder/Entities.dll": {}
+        }
+      },
+      "Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository.dll": {}
         }
       }
     }
@@ -9561,29 +9561,29 @@
       "path": "../Core/Core.csproj",
       "msbuildProject": "../Core/Core.csproj"
     },
-    "DataAccess/1.0.0": {
-      "type": "project",
-      "path": "../Repository/DataAccess.csproj",
-      "msbuildProject": "../Repository/DataAccess.csproj"
-    },
     "Entities/1.0.0": {
       "type": "project",
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
+    },
+    "Repository/1.0.0": {
+      "type": "project",
+      "path": "../Repository/Repository.csproj",
+      "msbuildProject": "../Repository/Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Business >= 1.0.0",
       "Core >= 1.0.0",
-      "DataAccess >= 1.0.0",
       "Entities >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.9",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.8",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.8",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
-      "Newtonsoft.Json >= 12.0.3"
+      "Newtonsoft.Json >= 12.0.3",
+      "Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9626,8 +9626,8 @@
             "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj": {
               "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj"
             },
-            "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\DataAccess.csproj"
+            "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj"
             }
           }
         }

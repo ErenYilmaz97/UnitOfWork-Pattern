@@ -11,6 +11,6 @@ C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\Business\bin\Debug\netcoreapp3.1\En
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\Business\bin\Debug\netcoreapp3.1\Core.pdb
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\Business\bin\Debug\netcoreapp3.1\Entities.pdb
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\Business\obj\Debug\netcoreapp3.1\Business.csproj.CopyComplete
-C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\Business\bin\Debug\netcoreapp3.1\DataAccess.dll
-C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\Business\bin\Debug\netcoreapp3.1\DataAccess.pdb
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\Business\obj\Debug\netcoreapp3.1\Business.csproj.CoreCompileInputs.cache
+C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\Business\bin\Debug\netcoreapp3.1\Repository.dll
+C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\Business\bin\Debug\netcoreapp3.1\Repository.pdb

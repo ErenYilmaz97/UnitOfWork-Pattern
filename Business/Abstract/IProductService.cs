@@ -18,5 +18,6 @@ namespace Business.Abstract
         IDataResult<Product> GetByName(string productName);
         IDataResult<List<Product>> GetByCategory(int categoryID);
         IDataResult<List<GetProductsWithCategoryDto>> GetProductsWithCategory();
+        IDataResult<GetProductsWithCategoryDto> GetProductWithCategory(int ProductID);
     }
 }
