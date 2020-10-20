@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreLoggerWebAPI.Filters;
 using Business.Abstract;
 using Business.Concrete;
 using Core.Results;
@@ -10,6 +11,7 @@ using Core.Validations;
 using Entities;
 using Entities.Entities;
 using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -42,18 +44,33 @@ namespace AspNetCoreLoggerWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddControllers(opts =>
+                {
+               
+                        opts.Filters.Add<ValidationFilter>();
+                })
 
-            services.AddMvc().AddNewtonsoftJson(o =>
+                .ConfigureApiBehaviorOptions(options =>
+                {
+                    options.SuppressModelStateInvalidFilter = true;
+                })
+
+                .AddFluentValidation(opt => { opt.RegisterValidatorsFromAssemblyContaining<CategoryValidator>(); })
+
+                
+                .AddNewtonsoftJson(o =>
             {
                 o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
+
+
 
 
             services.AddDbContext<AppDbContext>(x=>
             {
                 x.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString"));
             });
-            services.AddControllers();
+            
 
 
 
@@ -64,7 +81,6 @@ namespace AspNetCoreLoggerWebAPI
             services.AddScoped<Core.Log.ILogger, DbLogger>();
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
-
 
             services.AddScoped<AbstractValidator<Product>, ProductValidator>();
             services.AddScoped<AbstractValidator<Category>, CategoryValidator>();
@@ -88,6 +104,7 @@ namespace AspNetCoreLoggerWebAPI
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

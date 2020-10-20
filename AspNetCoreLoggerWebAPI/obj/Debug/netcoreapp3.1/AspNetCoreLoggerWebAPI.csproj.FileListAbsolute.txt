@@ -156,8 +156,8 @@ C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\ne
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Repository.dll
+C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Repository.pdb
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\obj\Debug\netcoreapp3.1\AspNetCoreLoggerWebAPI.csproj.CoreCompileInputs.cache
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\obj\Debug\netcoreapp3.1\AspNetCoreLoggerWebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\obj\Debug\netcoreapp3.1\AspNetCoreLoggerWebAPI.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Repository.dll
-C:\Users\eren_\Desktop\örnekc#\LoggerWebAPI\AspNetCoreLoggerWebAPI\bin\Debug\netcoreapp3.1\Repository.pdb

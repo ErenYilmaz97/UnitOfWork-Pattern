@@ -4,8 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using Entities.Abstract;
 
+
 namespace Entities.Entities
 {
+
+    
     public class Category : IEntity
     {
         [Key] 

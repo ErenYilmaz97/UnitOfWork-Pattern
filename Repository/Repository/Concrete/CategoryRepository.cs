@@ -24,7 +24,14 @@ namespace Repository.Concrete
 
         public Category GetByName(string categoryName)
         {
-            return _context.Categories.Where(x => x.Name.ToLower() == categoryName.ToLower()).FirstOrDefault();
+            try
+            {
+                return _context.Categories.Where(x => x.Name.ToLower() == categoryName.ToLower()).FirstOrDefault();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
 

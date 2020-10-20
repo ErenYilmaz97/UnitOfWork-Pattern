@@ -9391,6 +9391,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Core >= 1.0.0",
+      "FluentValidation.AspNetCore >= 9.2.0",
       "Repository >= 1.0.0"
     ]
   },
@@ -9442,6 +9443,12 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "dependencies": {
+          "FluentValidation.AspNetCore": {
+            "target": "Package",
+            "version": "[9.2.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

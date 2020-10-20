@@ -152,15 +152,15 @@ namespace Business.Concrete
         public IResult Update(Product product)
         {
 
-            //if (_unitOfWork._productRepository.GetById(product.ProductID) == null)
-            //{
-            //    return new ErrorResult(){Success = false, Message = "Güncellenecek Olan Ürün Veritabanında Bulunamadı"};
-            //}
+            if (_unitOfWork._productRepository.GetById(product.ProductID) == null)
+            {
+                return new ErrorResult() { Success = false, Message = "Güncellenecek Olan Ürün Veritabanında Bulunamadı." };
+            }
 
 
             if (_unitOfWork._productRepository.GetByName(product.Name) != null)
             {
-                return new ErrorResult("Bu İsimde Bir Ürün Bulunmakta (Update)");
+                return new ErrorResult("Bu İsimde Bir Ürün Bulunmakta. (Update)");
             }
 
 
@@ -241,7 +241,7 @@ namespace Business.Concrete
             {
                 return new ErrorDataResult<GetProductsWithCategoryDto>("Ürün Bulunamadı");
             }
-
+           
 
             return new SuccessDataResult<GetProductsWithCategoryDto>(product);
                 

@@ -3028,6 +3028,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Core": "1.0.0",
+          "FluentValidation.AspNetCore": "9.2.0",
           "Repository": "1.0.0"
         },
         "compile": {
@@ -9577,6 +9578,7 @@
       "Business >= 1.0.0",
       "Core >= 1.0.0",
       "Entities >= 1.0.0",
+      "FluentValidation.AspNetCore >= 9.2.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.9",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.8",
@@ -9641,6 +9643,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "FluentValidation.AspNetCore": {
+            "target": "Package",
+            "version": "[9.2.0, )"
+          },
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
             "target": "Package",
             "version": "[3.1.9, )"

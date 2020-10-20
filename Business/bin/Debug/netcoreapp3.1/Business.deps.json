@@ -9,6 +9,7 @@
       "Business/1.0.0": {
         "dependencies": {
           "Core": "1.0.0",
+          "FluentValidation.AspNetCore": "9.2.0",
           "Repository": "1.0.0"
         },
         "runtime": {

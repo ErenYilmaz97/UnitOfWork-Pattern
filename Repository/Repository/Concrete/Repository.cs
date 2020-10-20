@@ -56,5 +56,6 @@ namespace Repository.Concrete
         {
             _context.Set<TEntity>().Update(entity);
         }
+
     }
 }

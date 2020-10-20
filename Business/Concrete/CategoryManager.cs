@@ -36,14 +36,6 @@ namespace Business.Concrete
 
         public IResult Add(Category category)
         {
-            var validatorResult = _validator.Validate(category);
-
-            //VALIDATION
-            if (!validatorResult.IsValid)
-            {
-                return new ErrorResult(validatorResult.Errors.First().ErrorMessage);
-            }
-
 
             if (_unitOfWork._categoryRepository.GetByName(category.Name) != null)
             {
@@ -239,6 +231,8 @@ namespace Business.Concrete
 
             return new SuccessResult();
         }
+
+
 
 
     }

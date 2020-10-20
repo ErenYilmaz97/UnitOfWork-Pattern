@@ -27,6 +27,7 @@
           "Business": "1.0.0",
           "Core": "1.0.0",
           "Entities": "1.0.0",
+          "FluentValidation.AspNetCore": "9.2.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.9",
           "Microsoft.EntityFrameworkCore.Design": "3.1.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.8",
@@ -2632,6 +2633,7 @@
       "Business/1.0.0": {
         "dependencies": {
           "Core": "1.0.0",
+          "FluentValidation.AspNetCore": "9.2.0",
           "Repository": "1.0.0"
         },
         "runtime": {
