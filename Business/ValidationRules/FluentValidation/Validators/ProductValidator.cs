@@ -1,33 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Text;
-using Entities;
+﻿using System.Collections.Generic;
 using Entities.Entities;
 using FluentValidation;
 
-namespace Core.Validations
+namespace Business.ValidationRules.FluentValidation.Validators
 {
     public class ProductValidator : AbstractValidator<Product>
     {
-
-
         public ProductValidator()
         {
-            RuleFor(_ => _.Name).NotNull().WithMessage("Ürün Adı Boş Olamaz").Length(2, 40)
-                .WithMessage("Ürün Adı 2-40 Karakter Arası Olmalı");
+            RuleFor(x => x.Name).NotNull().WithMessage("Ürün Adı Boş Olamaz.").Length(2, 50)
+                .WithMessage("Ürün Adı 2-50 Karakter Olmalıdır.");
 
-            RuleFor(_ => _.Price).NotNull().WithMessage("Ürün Fiyatı Boş Olamaz").GreaterThan(0)
-                .WithMessage("Ürün Fiyatı 0 TL Olamaz");
 
-            RuleFor(_ => _.Stock).NotNull().WithMessage("Ürün Stok Bilgisi Boş Olamaz.").GreaterThan(0)
-                .WithMessage("Ürün Stok Bilgisi 0 Olamaz");
+            RuleFor(x => x.Price).NotNull().WithMessage("Ürün Fiyatı Boş Olamaz.").GreaterThan(0)
+                .WithMessage("Ürün Fiyatı 0 TLden Fazla Olmalıdır.");
 
-            RuleFor(_ => _.CategoryID).NotNull().WithMessage("CategoryID Boş Olamaz").GreaterThan(0)
-                .WithMessage("CategoryID 0 Olamaz");
+
+            RuleFor(x => x.Stock).NotNull().WithMessage("Ürün Stoğu Boş Olamaz.").GreaterThan(0)
+                .WithMessage("Ürün Stoğu 0'dan Büyük Olmalıdır.");
+
+            RuleFor(x => x.CategoryID).NotNull().WithMessage("Kategori ID Boş Olamaz.").GreaterThan(0)
+                .WithMessage("Kategori ID 0'dan Büyük Olmaldıır.");
+
+            
+
         }
-
-
-        
     }
 }

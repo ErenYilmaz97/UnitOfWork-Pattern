@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Core.Results
+﻿namespace Core.Results
 {
-    public class SuccessResult : IResult
+    public class SuccessResult : ResultBase
     {
+
         public SuccessResult()
         {
-            this.Success = true;
+            Success = true;
         }
 
 
-        public SuccessResult(string message)
+        public SuccessResult(string Message)
         {
-            this.Success = true;
-            this.Message = message;
+            Success = true;
+            this.Message = Message;
         }
 
 
-        public bool Success { get; set; }
-        public string Message { get; set; }
     }
 }

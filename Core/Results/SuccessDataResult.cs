@@ -1,30 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Core.Results
+﻿namespace Core.Results
 {
-    public class SuccessDataResult<T> : IDataResult<T> where T : class,new()
+    public class SuccessDataResult<T> :ResultBase, IDataResult<T>
     {
 
         public SuccessDataResult()
         {
-            this.Success = true;
+            Success = true;
         }
 
 
-
-        public SuccessDataResult(T data)
+        public SuccessDataResult(T Data)
         {
-            this.Success = true;
-            this.Data = data;
+            Success = true;
+            this.Data = Data;
         }
 
 
-
-
-        public bool Success { get; set; }
-        public string Message { get; set; }
         public T Data { get; set; }
+
     }
 }

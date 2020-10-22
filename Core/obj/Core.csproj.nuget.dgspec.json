@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj": {}
+    "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj": {
+    "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\eren_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\obj\\",
+        "outputPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -31,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj"
+              "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Entities\\Entities.csproj"
               }
             }
           }
@@ -46,14 +46,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "FluentValidation.AspNetCore": {
-              "target": "Package",
-              "version": "[9.2.0, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[12.0.3, )"
-            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[3.4.0, )"
@@ -85,14 +77,14 @@
         }
       }
     },
-    "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj": {
+    "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\eren_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -127,17 +119,17 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

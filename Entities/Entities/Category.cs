@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
-using Entities.Abstract;
-
+using Core.Entities;
 
 namespace Entities.Entities
 {
-
-    
     public class Category : IEntity
     {
-        [Key] 
+        [Key]
         public int CategoryID { get; set; }
         public string Name { get; set; }
 
-        virtual public ICollection<Product> Products { get; set; }
+
+       virtual public IEnumerable<Product> Products { get; set; }
     }
 }

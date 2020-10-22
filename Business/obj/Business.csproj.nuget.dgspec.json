@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Business\\Business.csproj": {}
+    "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Business\\Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Business\\Business.csproj": {
+    "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Business\\Business.csproj",
+        "projectPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\eren_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Business\\obj\\",
+        "outputPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -31,11 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj"
-              },
-              "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj"
+              "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Core\\Core.csproj"
               }
             }
           }
@@ -76,14 +73,14 @@
         }
       }
     },
-    "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj": {
+    "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\eren_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Core\\obj\\",
+        "outputPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -103,8 +100,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj"
+              "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Entities\\Entities.csproj"
               }
             }
           }
@@ -118,14 +115,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "FluentValidation.AspNetCore": {
-              "target": "Package",
-              "version": "[9.2.0, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[12.0.3, )"
-            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[3.4.0, )"
@@ -157,14 +146,14 @@
         }
       }
     },
-    "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj": {
+    "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\eren_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\eren_\\Desktop\\PROJELER\\LoggerWebAPI2\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -199,83 +188,23 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.4, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj",
-        "projectName": "Repository",
-        "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\eren_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Repository\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\eren_\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {
-              "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\eren_\\Desktop\\örnekc#\\LoggerWebAPI\\Entities\\Entities.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
           "imports": [
             "net461",
             "net462",

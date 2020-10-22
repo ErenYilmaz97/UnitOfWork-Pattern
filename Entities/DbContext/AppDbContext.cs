@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Entities.Entities;
+﻿using Entities.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Entities
+namespace Entities.DbContext
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : Microsoft.EntityFrameworkCore.DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
+
+        public AppDbContext(DbContextOptions<AppDbContext>options):base(options)
         {
             
         }
 
+
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<EntityOperationLog> EntityOperationLogs { get; set; }
 
+        
     }
 }

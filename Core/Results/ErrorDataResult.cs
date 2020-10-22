@@ -1,28 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Core.Results
+﻿namespace Core.Results
 {
-    public class ErrorDataResult<T> : IDataResult<T> where T : class,new()
+    public class ErrorDataResult<T> :ResultBase, IDataResult<T>
     {
 
         public ErrorDataResult()
         {
-            this.Success = false;
+            Success = false;
         }
 
-        public ErrorDataResult(string message)
+
+        public ErrorDataResult(string Message)
         {
-            this.Success = false;
-            this.Message = message;
+            Success = false;
+            this.Message = Message;
         }
 
-
-
-
-        public bool Success { get; set; }
-        public string Message { get; set; }
         public T Data { get; set; }
     }
 }
