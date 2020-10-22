@@ -4,6 +4,7 @@ using Entities.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using Core;
+using Core.Enums;
 using Core.UnitOfWork;
 using FluentValidation;
 
@@ -42,7 +43,7 @@ namespace Business
 
 
             //İŞLEM BAŞARILIYSA LOGLA
-            _logManager.GetLogger().Information("{@category}",category);
+            _logManager.GetLogger().Information("{@category}",category, LogType.Added);
             return new SuccessResult("Kategori Başarıyla Eklendi");
         }
 
@@ -66,7 +67,7 @@ namespace Business
             _unitOfWork.Commit();
 
             //İŞLEM BAŞARILIYSA LOGLA
-            _logManager.GetLogger().Information("{@categories}",categories);
+            _logManager.GetLogger().Information("{@categories}",categories, LogType.Added);
             return new SuccessResult("Kategoriler Başarıyla Eklendi");
         }
 
@@ -89,7 +90,7 @@ namespace Business
             _unitOfWork.Commit();
 
             //İŞLEM BAŞARILIYSA LOGLA
-            _logManager.GetLogger().Information("{@category}",findCategoryResult.Data);
+            _logManager.GetLogger().Information("{@category}",findCategoryResult.Data, LogType.Deleted);
             return new SuccessResult("Kategori Başarıyla Silindi.");
         }
 
@@ -196,7 +197,7 @@ namespace Business
             _unitOfWork.Commit();
 
             //İŞLEM BAŞARILIYSA LOGLA
-            _logManager.GetLogger().Information("{@category}",category);
+            _logManager.GetLogger().Information("{@category}",category, LogType.Updated);
             return new SuccessResult("Kategori Başarıyla Güncellendi.");
         }
 

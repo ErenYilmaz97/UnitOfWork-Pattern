@@ -4,6 +4,7 @@ using System.Linq;
 using Business.ValidationRules.FluentValidation.Validators;
 using Core;
 using Core.Business;
+using Core.Enums;
 using Core.Results;
 using Core.UnitOfWork;
 using Entities.Dto;
@@ -44,7 +45,7 @@ namespace Business
 
 
             //İŞLEM BAŞARILIYSA LOGLA
-            _logManager.GetLogger().Information("{@product}",product);
+            _logManager.GetLogger().Information("{@product}",product, LogType.Added);
             return new SuccessResult("Ürün Başarıyla Eklendi.");
         }
 
@@ -69,7 +70,7 @@ namespace Business
 
 
             //İŞLEM BAŞARILIYSA LOGLA
-            _logManager.GetLogger().Information("{@products}",products);
+            _logManager.GetLogger().Information("{@products}",products, LogType.Added);
             return new SuccessResult("Ürünler Başarıyla Eklendi.");
         }
 
@@ -91,7 +92,7 @@ namespace Business
 
 
             //İŞLEM BAŞARILIYSA LOGLA
-            _logManager.GetLogger().Information("{@product}",getProductResult.Data);
+            _logManager.GetLogger().Information("{@product}",getProductResult.Data, LogType.Deleted);
             return new SuccessResult("Ürün Başarıyla Silindi.");
         }
 
@@ -239,7 +240,7 @@ namespace Business
 
 
             //İŞLEM BAŞARILIYSA LOGLA
-            _logManager.GetLogger().Information("{@product}",product);
+            _logManager.GetLogger().Information("{@product}",product, LogType.Updated);
             return new SuccessResult("Ürün Başarıyla Güncellendi.");
         }
 

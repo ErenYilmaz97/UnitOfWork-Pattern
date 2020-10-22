@@ -49,8 +49,7 @@ namespace DataAccess.Repository
 
         public void Update(TEntity entity)
         {
-            _context.Entry<TEntity>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            //_context.Set<TEntity>().Update(entity);
+            _context.Set<TEntity>().Update(entity);
         }
     }
 }
