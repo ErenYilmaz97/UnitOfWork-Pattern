@@ -248,6 +248,7 @@ namespace Business
 
 
 
+
         private IResult CheckProducts(List<Product> products)
         {
             foreach (Product product in products)

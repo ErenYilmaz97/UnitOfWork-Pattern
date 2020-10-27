@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.7.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Managers\FireAndForgetJobs\" />
+    <Folder Include="Managers\DelayedJobs\" />
+    <Folder Include="Managers\ContinuationJobs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+  </ItemGroup>
+
+</Project>

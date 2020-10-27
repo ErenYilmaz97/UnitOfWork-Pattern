@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BackgroundJob.Schedules;
 using Business;
 using Business.ValidationRules.FluentValidation.Validators;
 using Core;
@@ -14,6 +15,8 @@ using Entities.DbContext;
 using Entities.Entities;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Hangfire;
+using Hangfire.SqlServer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -53,6 +56,7 @@ namespace WebAPI
                 .AddFluentValidation(opt => { opt.RegisterValidatorsFromAssemblyContaining<CategoryValidator>(); })
                 .AddNewtonsoftJson(o =>
                 {
+                    //INCLUDE
                     o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                 });
 
@@ -64,6 +68,31 @@ namespace WebAPI
                 x.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString"));
             });
 
+
+            //HANGFIRE CONFIGURATION
+            var hangfireConString = Configuration["ConnectionStrings:HangFireConnectionString"];
+
+            services.AddHangfire(config =>
+            {
+                var option = new SqlServerStorageOptions
+                {
+                    PrepareSchemaIfNecessary = true,
+                    QueuePollInterval = TimeSpan.FromMinutes(5),
+                    CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
+                    SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
+                    UseRecommendedIsolationLevel = true,
+                    UsePageLocksOnDequeue = true,
+                    DisableGlobalLocks = true
+
+                };
+
+                config.UseSqlServerStorage(hangfireConString, option)
+                    .WithJobExpirationTimeout(TimeSpan.FromHours(6));
+            });
+            services.AddHangfireServer();
+
+            //RETRY
+            GlobalJobFilters.Filters.Add(new AutomaticRetryAttribute { Attempts = 0 });
 
 
 
@@ -83,21 +112,43 @@ namespace WebAPI
             //ILOGMANAGER ISTENIRSE DBLOGGER NESNESINI SETLE
             services.AddScoped<ILogManager, DbLogger>();
 
+            services.AddScoped<IDatabaseManager, DatabaseOperations>();
+
+
+           
         }
 
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseHangfireDashboard("/BackgroundJobs",new DashboardOptions
+            {
+                DashboardTitle = "Eren Yýlmaz Hangfire Dashboard",  //TITLE
+                AppPath = "/weatherforecast"   //BACK TO SITE
+            });
+
+
+            //HANGFIRE SERVER CONFIGURATION
+            app.UseHangfireServer(new BackgroundJobServerOptions()
+            {
+                //5 SANÝYEDE BÝR KONTROL ET
+                SchedulePollingInterval = TimeSpan.FromSeconds(5)
+            });
+
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            RecurringJobs.DatabaseBackupOperation();
         }
     }
 }

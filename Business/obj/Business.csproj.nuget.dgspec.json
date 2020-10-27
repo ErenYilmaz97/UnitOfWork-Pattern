@@ -115,6 +115,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.SqlServer.SqlManagementObjects": {
+              "target": "Package",
+              "version": "[161.44091.28, )"
+            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[3.4.0, )"

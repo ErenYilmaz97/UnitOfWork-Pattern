@@ -1,0 +1,14 @@
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\bin\Debug\netcoreapp3.1\BackgroundJob.deps.json
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\bin\Debug\netcoreapp3.1\BackgroundJob.dll
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\obj\Debug\netcoreapp3.1\BackgroundJob.csprojAssemblyReference.cache
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\obj\Debug\netcoreapp3.1\BackgroundJob.AssemblyInfoInputs.cache
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\obj\Debug\netcoreapp3.1\BackgroundJob.AssemblyInfo.cs
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\bin\Debug\netcoreapp3.1\BackgroundJob.pdb
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\obj\Debug\netcoreapp3.1\BackgroundJob.csproj.CoreCompileInputs.cache
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\obj\Debug\netcoreapp3.1\BackgroundJob.dll
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\obj\Debug\netcoreapp3.1\BackgroundJob.pdb
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\bin\Debug\netcoreapp3.1\Core.pdb
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\BackgroundJob\obj\Debug\netcoreapp3.1\BackgroundJob.csproj.CopyComplete

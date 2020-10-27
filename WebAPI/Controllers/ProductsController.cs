@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BackgroundJob.Schedules;
 using Core.Business;
 using Entities.Entities;
+using Hangfire.Server;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using Microsoft.SqlServer.Management.Smo;
 using WebAPI.ActionAttributes;
 
 namespace WebAPI.Controllers
@@ -177,6 +181,15 @@ namespace WebAPI.Controllers
 
 
             return BadRequest(result.Message);
+        }
+
+
+
+        [HttpGet("Deneme")]
+        public IActionResult Deneme()
+        {
+            DelayedJobs.DatabaseBackupOperation();
+            return Ok("Veritabanı Yedeği Alındı.");
         }
     }
 }
