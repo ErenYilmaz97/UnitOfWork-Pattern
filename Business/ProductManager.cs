@@ -114,7 +114,7 @@ namespace Business
         {
             if (_unitOfWork.Categories.GetById(categoryID) == null)
             {
-                return new ErrorDataResult<List<Product>>("Kategori Bulunamadı");
+                return new ErrorDataResult<List<Product>>("Seçilen Kategori Bulunamadı");
             }
 
 

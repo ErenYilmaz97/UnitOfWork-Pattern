@@ -1,0 +1,54 @@
+﻿@model List<Entities.Dto.GetProductWithCategoryDto>
+
+@{
+    ViewData["Title"] = "WithCategory";
+}
+
+    <div class="row mt-5">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            
+
+            @if (ViewBag.ProductsNotFound != null)
+            {
+            <div class="alert alert-danger mt-4">
+                <small>@ViewBag.ProductsNotFound</small>
+            </div>
+            }
+            
+            
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Category</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                    
+                </tr>
+                </thead>
+                <tbody>
+
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.ProductID</td>
+                        <td>@product.Name</td>
+                        <td>@product.Price</td>
+                        <td>@product.Stock</td>
+                        <td>@product.CategoryName</td>
+                        <td><a href="/Product/Update/@product.ProductID" class="btn btn-sm btn-outline-primary">Update</a></td>
+                        <td><a href="/Product/Delete/@product.ProductID" class="btn btn-sm btn-outline-danger">Delete</a></td>
+                    </tr>
+                }
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+

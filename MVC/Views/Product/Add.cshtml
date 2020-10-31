@@ -1,0 +1,62 @@
+﻿@model AddProductModel
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+
+
+
+<div class="row mt-5">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        
+        @if (ViewBag.AddProductFailed != null)
+        {
+            <div class="alert alert-danger text-center">
+                <small>@ViewBag.AddProductFailed</small>
+            </div>
+        }
+
+        <h4 class="text-center">Ürün Ekle</h4>
+        <hr/>
+
+        <form asp-action="Add" asp-controller="Product" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Product.Name" class="control-label"></label>
+                <input asp-for="@Model.Product.Name" class="form-control"/>
+                <span asp-validation-for="@Model.Product.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Product.Price" class="control-label"></label>
+                <input asp-for="@Model.Product.Price" class="form-control"/>
+                <span asp-validation-for="@Model.Product.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Product.Stock" class="control-label"></label>
+                <input asp-for="@Model.Product.Stock" class="form-control"/>
+                <span asp-validation-for="@Model.Product.Stock" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label">Kategori</label>
+                <select asp-for="Product.CategoryID" class="form-control"
+                        asp-items="@(new SelectList(Model.Categories, "CategoryID", "Name"))">
+                    <option value="">Kategori</option>
+                </select>
+                <span asp-validation-for="@Model.Product.CategoryID" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group mt-4">
+                <input type="submit" value="Create" class="btn btn-block btn-primary"/>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+

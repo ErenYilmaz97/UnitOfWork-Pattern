@@ -45,7 +45,7 @@ namespace WebAPI.Controllers
 
 
 
-        [HttpGet("{productID}")]
+        [HttpGet("Product/{productID}")]
         public IActionResult GetProduct(int productID)
         {
             var result = _productService.GetById(productID);
@@ -184,12 +184,5 @@ namespace WebAPI.Controllers
         }
 
 
-
-        [HttpGet("Deneme")]
-        public IActionResult Deneme()
-        {
-            DelayedJobs.DatabaseBackupOperation();
-            return Ok("Veritabanı Yedeği Alındı.");
-        }
     }
 }

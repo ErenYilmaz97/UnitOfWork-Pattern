@@ -1,0 +1,42 @@
+﻿@model Category
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="row mt-5">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        
+        <h4 class="text-center">Kategori Güncelle</h4>
+        <hr />
+        
+        @if (ViewBag.CategoryUpdateFailed != null)
+        {
+    <div class="alert alert-danger text-center">
+        <small>@ViewBag.CategoryUpdateFailed</small>
+    </div>
+        }
+        
+
+        <form asp-action="Update" asp-controller="Category" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="CategoryID"/>
+            
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Güncelle" class="btn btn-block btn-primary"/>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+
+
