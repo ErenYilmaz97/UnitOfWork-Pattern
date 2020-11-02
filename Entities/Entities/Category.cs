@@ -5,7 +5,7 @@ using Core.Entities;
 
 namespace Entities.Entities
 {
-    public class Category : IEntity
+    public class Category : Entity
     {
         [Key]
         public int CategoryID { get; set; }

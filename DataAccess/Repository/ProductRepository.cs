@@ -29,7 +29,9 @@ namespace DataAccess.Repository
 
         public List<Product> GetByCategory(int categoryID)
         {
-            return _context.Products.Where(x => x.CategoryID == categoryID).ToList();
+            //return _context.Products.(x => x.CategoryID == categoryID).ToList();
+
+            return this.Get(x => x.CategoryID == categoryID).ToList();
 
         }
 
@@ -42,7 +44,8 @@ namespace DataAccess.Repository
         {
             try
             {
-                return _context.Products.Where(x => x.Name.ToLower() == productName.ToLower()).FirstOrDefault();
+                //return _context.Products.Where(x => x.Name.ToLower() == productName.ToLower()).FirstOrDefault();
+                return this.GetFirstOrDefault(x => x.Name.ToLower() == productName.ToLower());
             }
             catch
             {

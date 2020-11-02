@@ -45,7 +45,7 @@ namespace WebAPI.Controllers
 
 
 
-        [HttpGet("Product/{productID}")]
+        [HttpGet("{productID}")]
         public IActionResult GetProduct(int productID)
         {
             var result = _productService.GetById(productID);

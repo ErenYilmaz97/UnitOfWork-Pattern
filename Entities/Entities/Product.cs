@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Entities.Entities
 {
-    public class Product : IEntity
+    public class Product : Entity
     {
         [Key]
         public int ProductID { get; set; }
