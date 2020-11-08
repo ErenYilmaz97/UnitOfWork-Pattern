@@ -1,6 +1,5 @@
 C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\Entities\bin\Debug\netcoreapp3.1\Entities.deps.json
 C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\Entities\bin\Debug\netcoreapp3.1\Entities.dll
-C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\Entities\obj\Debug\netcoreapp3.1\Entities.csprojAssemblyReference.cache
 C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
 C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
 C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\Entities\bin\Debug\netcoreapp3.1\Entities.runtimeconfig.json
@@ -10,3 +9,4 @@ C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\Entities\obj\Debug\netcoreapp3.1\E
 C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\Entities\bin\Debug\netcoreapp3.1\Entities.pdb
 C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\Entities\obj\Debug\netcoreapp3.1\Entities.dll
 C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\Entities\obj\Debug\netcoreapp3.1\Entities.csprojAssemblyReference.cache

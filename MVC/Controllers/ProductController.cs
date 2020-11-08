@@ -32,6 +32,17 @@ namespace MVC.Controllers
         }
 
 
+
+
+        [HttpGet]
+        public PartialViewResult GetProductsViewComponent()
+        {
+            //VİEWCOMPONENT DÖNÜYOR
+            return PartialView("Components/ProductTable/Default", _productApiService.GetAll().Result.Data);
+        }
+
+
+
         
         public async Task<IActionResult> Index()
         {
@@ -50,16 +61,10 @@ namespace MVC.Controllers
 
 
 
-        [ImportModelState]
+        
         [HttpGet]
         public async Task<IActionResult> Add()
         {
-            if (TempData["AddProductFailed"] != null)
-            {
-                ViewBag.AddProductFailed = TempData["AddProductFailed"].ToString();
-            }
-
-
             var categories = await _categoryApiService.GetAll();
             return View(new AddProductModel(){Categories = categories.Data});
         }
@@ -67,87 +72,79 @@ namespace MVC.Controllers
 
         
         [HttpPost]
-        [ExportModelState]
         public async Task<IActionResult> Add(AddProductModel addProductModel)
         {
-            var result = await _productApiService.AddProduct(addProductModel.Product);
 
-            if (!result.Success)
+            if (ModelState.IsValid)
             {
-                TempData["AddProductFailed"] = result.Message;
-                return RedirectToAction("Add");
+                var result = await _productApiService.AddProduct(addProductModel.Product);
+
+                //AJAX İÇİN JSON DÖNÜYORUZ
+                return Json(new { success = result.Success, message = result.Message });
             }
 
-            TempData["ProcessStatus"] = "Succeeded";
-            TempData["ResponseMessage"] = result.Message;
-            return RedirectToAction("Index");
+            return BadRequest();
         }
 
 
-        [ImportModelState]
-        [HttpGet("Product/Update/{productID}")]
-        public async Task<IActionResult> Update(int productID)
+        
+        [HttpGet]
+        [Route("Product/Update/{id}")]
+        public async Task<IActionResult> Update(int id)
         {
 
-            if (TempData["UpdateProductFailed"] != null)
-            {
-                ViewBag.UpdateProductFailed = TempData["UpdateProductFailed"].ToString();
-            }
-
-
-
-            var result = await _productApiService.Get(productID);
+            var result = await _productApiService.Get(id);
 
             if (!result.Success)
             {
-                TempData["ProcessStatus"] = "Failed";
-                TempData["ResponseMessage"] = result.Message;
-                return RedirectToAction("Index");
+                return Json(new {success = result.Success, message = result.Message});
             }
 
             return View(new AddProductModel(){Product = result.Data, Categories = _categoryApiService.GetAll().Result.Data});
-
 
         }
 
 
 
         
-        [HttpPost("Product/Update/{productID}")]
-        [ExportModelState]
-        public async Task<IActionResult> Update(AddProductModel addProductModel)
+        [HttpPost]
+        public async Task<IActionResult> UpdateProduct(AddProductModel addProductModel)
         {
-            var result = await _productApiService.UpdateProduct(addProductModel.Product);
 
-            if (!result.Success)
+            if(ModelState.IsValid)
             {
-                TempData["UpdateProductFailed"] = result.Message;
-                return RedirectToAction("Update");
+                var result = await _productApiService.UpdateProduct(addProductModel.Product);
+
+                return Json(new { success = result.Success, message = result.Message });
+                
             }
 
-            TempData["ProcessStatus"] = "Succeeded";
-            TempData["ResponseMessage"] = result.Message;
-            return RedirectToAction("Index");
+            return BadRequest();
         }
 
 
 
-        [HttpGet("Product/Delete/{productID}")]
-        public async Task<IActionResult> Delete(int productID)
+        [HttpGet]
+        [Route("Product/Delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            var result = await _productApiService.DeleteProduct(productID);
+            var result = await _productApiService.GetproductWithCategory(id);
 
             if (!result.Success)
             {
-                TempData["ProcessStatus"] = "Failed";
-                TempData["ResponseMessage"] = result.Message;
-                return RedirectToAction("Index");
+                return Json(new {success = result.Success, message = result.Message});
             }
 
+            return View(result.Data);
+        }
 
-            TempData["ProcessStatus"] = "Succeeded";
-            TempData["ResponseMessage"] = result.Message;
-            return RedirectToAction("Index");
+
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var result = await _productApiService.DeleteProduct(id);
+            return Json(new {success = result.Success, message = result.Message});
         }
 
 

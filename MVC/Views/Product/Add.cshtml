@@ -7,56 +7,81 @@
 
 
 
-<div class="row mt-5">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
+<div class="row">
+    <div class="col-md-12">
         
-        @if (ViewBag.AddProductFailed != null)
-        {
-            <div class="alert alert-danger text-center">
-                <small>@ViewBag.AddProductFailed</small>
-            </div>
-        }
 
-        <h4 class="text-center">Ürün Ekle</h4>
-        <hr/>
-
-        <form asp-action="Add" asp-controller="Product" method="post">
+        <form asp-action="Add" asp-controller="Product" method="post" onsubmit="return AjaxAddProduct(this);" autocomplete="off">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
                 <label asp-for="@Model.Product.Name" class="control-label"></label>
-                <input asp-for="@Model.Product.Name" class="form-control"/>
+                
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            #
+                        </div>
+                    </div>
+
+                    <input asp-for="@Model.Product.Name" class="form-control" />
+
+                </div>
+
+                
                 <span asp-validation-for="@Model.Product.Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="@Model.Product.Price" class="control-label"></label>
-                <input asp-for="@Model.Product.Price" class="form-control"/>
-                <span asp-validation-for="@Model.Product.Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Product.Stock" class="control-label"></label>
-                <input asp-for="@Model.Product.Stock" class="form-control"/>
-                <span asp-validation-for="@Model.Product.Stock" class="text-danger"></span>
-            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
 
+                    <div class="form-group">
+                        <label asp-for="@Model.Product.Price" class="control-label"></label>
 
-            <div class="form-group">
-                <label class="control-label">Kategori</label>
-                <select asp-for="Product.CategoryID" class="form-control"
-                        asp-items="@(new SelectList(Model.Categories, "CategoryID", "Name"))">
-                    <option value="">Kategori</option>
-                </select>
-                <span asp-validation-for="@Model.Product.CategoryID" class="text-danger"></span>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                            </div>
+
+                            <input asp-for="@Model.Product.Price" class="form-control" />
+
+                        </div>
+
+                        <span asp-validation-for="@Model.Product.Price" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Product.Stock" class="control-label"></label>
+                        <input asp-for="@Model.Product.Stock" class="form-control"/>
+                        <span asp-validation-for="@Model.Product.Stock" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                    <div class="form-group">
+                        <label class="control-label">Kategori</label>
+                        <select asp-for="Product.CategoryID" class="form-control"
+                                asp-items="@(new SelectList(Model.Categories, "CategoryID", "Name"))">
+                            <option value="">Kategori</option>
+                        </select>
+                        <span asp-validation-for="@Model.Product.CategoryID" class="text-danger"></span>
+                    </div>
+                </div>
             </div>
-
+            
 
             <div class="form-group mt-4">
                 <input type="submit" value="Create" class="btn btn-block btn-primary"/>
             </div>
         </form>
     </div>
-    <div class="col-md-4"></div>
+  
 </div>
 
 

@@ -215,3 +215,7 @@ C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\MVC\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\MVC\obj\Debug\netcoreapp3.1\Razor\Views\Category\Index.cshtml.g.cs
 C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\MVC\obj\Debug\netcoreapp3.1\Razor\Views\Category\Add.cshtml.g.cs
 C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\MVC\obj\Debug\netcoreapp3.1\Razor\Views\Category\Update.cshtml.g.cs
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\MVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\ProductTable\Default.cshtml.g.cs
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\MVC\obj\Debug\netcoreapp3.1\Razor\Views\Product\Delete.cshtml.g.cs
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\MVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CategoryTable\Default.cshtml.g.cs
+C:\Users\eren_\Desktop\PROJELER\LoggerWebAPI2\MVC\obj\Debug\netcoreapp3.1\Razor\Views\Category\Delete.cshtml.g.cs

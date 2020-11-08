@@ -194,6 +194,7 @@ namespace Business
         public IDataResult<GetProductWithCategoryDto> GetProductWithCategory(int ProductID)
         {
             var product = _unitOfWork.Products.GetProductsWithCategory().Where(x => x.ProductID == ProductID).FirstOrDefault();
+           
 
             if (product == null)
             {

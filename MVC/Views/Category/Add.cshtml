@@ -6,37 +6,35 @@
 
 
 
-<div class="row mt-5">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-        
-        
-        @if (ViewBag.CategoryUpdateFailed != null)
-        {
-            <div class="alert alert-danger text-center">
-                <small>@ViewBag.CategoryUpdateFailed</small>
-            </div>
-        }
-        
+<div class="row">
+    <div class="col-md-12">
 
-        <h4 class="text-center">Kategori Ekle</h4>
-        <hr />
-        <form asp-action="Add" asp-controller="Category" method="post">
+        <form asp-action="Add" asp-controller="Category" method="post" onsubmit="return AjaxAddCategory(this);" autocomplete="off">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control"/>
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="@Model.Name" class="control-label"></label>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            #
+                        </div>
+                    </div>
+
+                    <input asp-for="@Model.Name" class="form-control" />
+
+                </div>
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
             </div>
             
 
             <div class="form-group">
-                <input type="submit" value="Ekle" class="btn btn-block btn-primary"/>
+                <input type="submit" value="Add" class="btn btn-block btn-primary"/>
             </div>
         </form>
     </div>
-    <div class="col-md-4"></div>
+   
 </div>
 
 

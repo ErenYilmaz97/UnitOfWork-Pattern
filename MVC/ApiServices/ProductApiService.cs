@@ -118,6 +118,23 @@ namespace MVC.ApiServices
 
 
 
+        public async Task<IDataResult<GetProductWithCategoryDto>> GetproductWithCategory(int productID)
+        {
+            var response = await _httpClient.GetAsync($"products/{productID}/withcategory");
+
+
+            if (response.IsSuccessStatusCode)
+            {
+                return new SuccessDataResult<GetProductWithCategoryDto>
+                    (JsonConvert.DeserializeObject<GetProductWithCategoryDto>(await response.Content.ReadAsStringAsync()));
+            }
+
+
+            return new ErrorDataResult<GetProductWithCategoryDto>(await response.Content.ReadAsStringAsync());
+        }
+
+
+
 
         public async Task<IDataResult<List<Product>>> GetByCategory(int categoryID)
         {

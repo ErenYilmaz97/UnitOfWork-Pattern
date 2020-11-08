@@ -1,6 +1,6 @@
 ﻿namespace Core.Results
 {
-    public class ErrorDataResult<T> :ResultBase, IDataResult<T>
+    public class ErrorDataResult<T> : DataResultBase<T> where T: class,new()
     {
 
         public ErrorDataResult()
@@ -15,6 +15,5 @@
             this.Message = Message;
         }
 
-        public T Data { get; set; }
     }
 }

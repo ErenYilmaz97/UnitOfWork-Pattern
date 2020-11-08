@@ -25,6 +25,14 @@ namespace MVC.Controllers
 
 
 
+        public PartialViewResult GetCategoriesViewComponent()
+        {
+            //VIEWCOMPONENT DÖNÜYOR
+            return PartialView("Components/CategoryTable/Default",_categoryApiService.GetAllWithProducts().Result.Data);
+        }
+
+
+
         public async Task<IActionResult> Index()
         {
 
@@ -42,15 +50,10 @@ namespace MVC.Controllers
         }
 
 
-        [ImportModelState]
+        
         [HttpGet]
         public  IActionResult Add()
         {
-            if (TempData["CategoryUpdateFailed"] != null)
-            {
-                ViewBag.CategoryUpdateFailed = TempData["CategoryUpdateFailed"].ToString();
-            }
-
 
             return View();
         }
@@ -58,61 +61,52 @@ namespace MVC.Controllers
 
 
         [HttpPost]
-        [ExportModelState]
         public async Task<IActionResult> Add(Category category)
         {
-            var result = await _categoryApiService.AddCategory(category);
-
-            if (!result.Success)
+            if (ModelState.IsValid)
             {
-                TempData["CategoryUpdateFailed"] = result.Message;
-                return RedirectToAction("Add");
+                var result = await _categoryApiService.AddCategory(category);
+                return Json(new {success = result.Success, message = result.Message});
             }
 
-            TempData["CategoryProcessStatus"] = "Succeeded";
-            TempData["CategoryResponseMessage"] = result.Message;
-            return RedirectToAction("Index", "Category");
+            return BadRequest();
         }
 
 
-        [HttpGet("Category/Delete/{categoryID}")]
-        public async Task<IActionResult> Delete(int categoryID)
-        {
-            var result = await _categoryApiService.DeleteCategory(categoryID);
 
+        [HttpGet]
+        [Route("Category/Delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await _categoryApiService.GetCategory(id);
 
             if (!result.Success)
             {
-                TempData["CategoryProcessStatus"] = "Failed";
-                TempData["CategoryResponseMessage"] = result.Message;
-                return RedirectToAction("Index", "Category");
+                return Json(new {success = result.Success, message = result.Message});
             }
 
-
-            TempData["CategoryProcessStatus"] = "Succeeded";
-            TempData["CategoryResponseMessage"] = result.Message;
-            return RedirectToAction("Index", "Category");
-
+            return View(result.Data);
         }
 
 
-        [ImportModelState]
-        [HttpGet("Category/Update/{categoryID}")]
-        public async Task<IActionResult> Update(int categoryID)
+        [HttpPost]
+        public async Task<IActionResult> DeleteCategory(int id)
         {
-            if (TempData["CategoryUpdateFailed"] != null)
-            {
-                ViewBag.CategoryUpdateFailed = TempData["CategoryUpdateFailed"].ToString();
-            }
+            var result = await _categoryApiService.DeleteCategory(id);
+            return Json(new {success = result.Success, message = result.Message});
+        }
 
 
-            var result = await _categoryApiService.GetCategory(categoryID);
+       
+        [HttpGet]
+        [Route("Category/Update/{id}")]
+        public async Task<IActionResult> Update(int id)
+        {
+            var result = await _categoryApiService.GetCategory(id);
 
             if (!result.Success)
             {
-                TempData["CategoryProcessStatus"] = "Failed";
-                TempData["CategoryResponseMessage"] = result.Message;
-                return RedirectToAction("Index", "Category");
+                return Json(new {success = result.Success, message = result.Message});
             }
 
             return View(result.Data);
@@ -121,21 +115,17 @@ namespace MVC.Controllers
 
 
 
-        [HttpPost("Category/Update/{categoryID}")]
-        [ExportModelState]
-        public async Task<IActionResult> Update(Category category)
+        [HttpPost]
+        //[Route("Category/Update")]
+        public async Task<IActionResult> UpdateCategory(Category category)
         {
-            var result = await _categoryApiService.UpdateCategory(category);
-
-            if (!result.Success)
+            if (ModelState.IsValid)
             {
-                TempData["CategoryUpdateFailed"] = result.Message;
-                return RedirectToAction("Update", "Category");
+                var result = await _categoryApiService.UpdateCategory(category);
+                return Json(new {success = result.Success, message = result.Message});
             }
 
-            TempData["CategoryProcessStatus"] = "Succeeded";
-            TempData["CategoryResponseMessage"] = result.Message;
-            return RedirectToAction("Index", "Category");
+            return BadRequest();
         }
 
         

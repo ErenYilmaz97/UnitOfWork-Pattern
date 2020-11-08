@@ -23,12 +23,12 @@ namespace Entities.Entities
         public decimal Price { get; set; }
 
         [Required(ErrorMessage = "Zorunlu Alan")]
-        [Range(1, double.MaxValue, ErrorMessage = "Stok Bilgisi 0 Olamaz")]
+        [Range(1, int.MaxValue, ErrorMessage = "Stok Bilgisi 0 Olamaz")]
         [DisplayName("Stok Sayısı")]
         public int Stock { get; set; }
 
         [Required(ErrorMessage = "Zorunlu Alan")]
-        [Range(1, double.MaxValue, ErrorMessage = "Kategori Numarası 0 Olamaz")]
+        [Range(1, int.MaxValue, ErrorMessage = "Kategori Numarası 0 Olamaz")]
         [DisplayName("Kategori")]
         public int CategoryID { get; set; }
 

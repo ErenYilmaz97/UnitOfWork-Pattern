@@ -1,6 +1,6 @@
 ﻿namespace Core.Results
 {
-    public class SuccessDataResult<T> :ResultBase, IDataResult<T>
+    public class SuccessDataResult<T> : DataResultBase<T> where T: class,new()
     {
 
         public SuccessDataResult()
@@ -14,9 +14,6 @@
             Success = true;
             this.Data = Data;
         }
-
-
-        public T Data { get; set; }
 
     }
 }

@@ -5,59 +5,80 @@
 }
 
 
-<div class="row mt-5">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
+<div class="row">
+  
+    <div class="col-md-12">
 
-        @if (ViewBag.UpdateProductFailed != null)
-        {
-            <div class="alert alert-danger text-center">
-                <small>@ViewBag.UpdateProductFailed</small>
-            </div>
-        }
-
-        <h4 class="text-center">Ürün Güncelle</h4>
-        <hr />
-
-        <form asp-action="Update" asp-controller="Product" method="post">
+        <form asp-action="UpdateProduct" asp-controller="Product" method="post" onsubmit="return AjaxUpdateProduct(this);" autocomplete="off">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Product.ProductID" />
+
+            <div class="form-group">
+                <label asp-for="@Model.Product.Name" class="control-label"></label>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            #
+                        </div>
+                    </div>
+
+                    <input asp-for="@Model.Product.Name" class="form-control" />
+                </div>
+                <span asp-validation-for="@Model.Product.Name" class="text-danger"></span>
+            </div>
             
-            <input type="hidden" asp-for="Product.ProductID"/>
+            
+            <div class="row">
+                <div class="col-md-4">
 
-            <div class="form-group">
-                <label asp-for="Product.Name" class="control-label"></label>
-                <input asp-for="Product.Name" class="form-control" />
-                <span asp-validation-for="Product.Name" class="text-danger"></span>
+                    <div class="form-group">
+                        <label asp-for="@Model.Product.Price" class="control-label"></label>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                            </div>
+
+                            <input asp-for="@Model.Product.Price" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="@Model.Product.Price" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    
+                    <div class="form-group">
+                        <label asp-for="Product.Stock" class="control-label"></label>
+                        <input asp-for="Product.Stock" class="form-control" />
+                        <span asp-validation-for="Product.Stock" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    
+                    <div class="form-group">
+                        <label class="control-label">Kategori</label>
+                        <select asp-for="Product.CategoryID" class="form-control"
+                                asp-items="@(new SelectList(Model.Categories, "CategoryID", "Name"))">
+                            <option value="">Kategori</option>
+                        </select>
+                        <span asp-validation-for="@Model.Product.CategoryID" class="text-danger"></span>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="form-group">
-                <label asp-for="Product.Price" class="control-label"></label>
-                <input asp-for="Product.Price" class="form-control" />
-                <span asp-validation-for="Product.Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Product.Stock" class="control-label"></label>
-                <input asp-for="Product.Stock" class="form-control" />
-                <span asp-validation-for="Product.Stock" class="text-danger"></span>
-            </div>
-
 
             <div class="form-group">
-                <label class="control-label">Kategori</label>
-                <select asp-for="Product.CategoryID" class="form-control"
-                        asp-items="@(new SelectList(Model.Categories, "CategoryID", "Name"))">
-                    <option value="">Kategori</option>
-                </select>
-                <span asp-validation-for="@Model.Product.CategoryID" class="text-danger"></span>
-            </div>
-
-
-            <div class="form-group">
-                <input type="submit" value="Güncelle" class="btn btn-block btn-primary"/>
+                <input type="submit" value="Update" class="btn btn-block btn-primary" />
             </div>
         </form>
     </div>
-    <div class="col-md-4"></div>
+    
 </div>
 
 

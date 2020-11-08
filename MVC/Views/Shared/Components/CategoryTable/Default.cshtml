@@ -1,0 +1,49 @@
+﻿@model List<Category>
+
+@{
+    ViewData["Title"] = "Default";
+}
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+
+        <h3 class="text-center"><i class="fas fa-comment-dollar text-primary"></i> Categories</h3>
+
+    </div>
+    <div class="col-md-4">
+
+        <a onclick="showAddCategoryInModal('@Url.Action("Add","Category",null,Context.Request.Scheme)', 'Add Category')" class="btn btn-sm btn-primary text-white" style="margin-left: 30px; margin-top: 4px;">
+            <i class="fas fa-random"></i> New Category
+        </a>
+
+    </div>
+</div>
+
+
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Kategori</th>
+        <th class="text-center">Ürün Sayısı</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @foreach (Category category in Model)
+    {
+        <tr>
+            <td>@category.CategoryID</td>
+            <td>@category.Name</td>
+            <td class="text-center">@category.Products.Count()</td>
+            <td><button class="btn btn-sm btn-outline-primary" onclick="ShowUpdateCategoryInModal('Category/Update/@category.CategoryID','Update Category')">Update</button></td>
+            <td><button class="btn btn-sm btn-outline-danger" onclick="ShowDeleteCategoryInModal('Category/Delete/@category.CategoryID','Delete Category')">Delete</button></td>
+        </tr>
+    }
+    </tbody>
+</table>
+
