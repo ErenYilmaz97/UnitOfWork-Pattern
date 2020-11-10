@@ -46,15 +46,6 @@ namespace MVC.Controllers
         
         public async Task<IActionResult> Index()
         {
-            if(TempData["ProcessStatus"] != null && TempData["ResponseMessage"] != null)
-            {
-                ViewBag.ProcessStatus = TempData["ProcessStatus"].ToString();
-                ViewBag.ResponseMessage = TempData["ResponseMessage"].ToString();
-            }
-
-
-
-
             var result = await _productApiService.GetAll();
             return View(result.Data);
         }

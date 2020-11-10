@@ -42,15 +42,8 @@ namespace DataAccess.Repository
 
         public Product GetByName(string productName)
         {
-            try
-            {
-                //return _context.Products.Where(x => x.Name.ToLower() == productName.ToLower()).FirstOrDefault();
-                return this.GetFirstOrDefault(x => x.Name.ToLower() == productName.ToLower());
-            }
-            catch
-            {
-                return null;
-            }
+            //return _context.Products.Where(x => x.Name.ToLower() == productName.ToLower()).FirstOrDefault();
+            return this.GetFirstOrDefault(x => x.Name.ToLower() == productName.ToLower());
         }
 
 

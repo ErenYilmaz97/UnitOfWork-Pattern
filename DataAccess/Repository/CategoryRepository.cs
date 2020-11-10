@@ -26,15 +26,8 @@ namespace DataAccess.Repository
 
         public Category GetByName(string categoryName)
         {
-            try
-            {
-                //return _context.Categories.Where(x => x.Name.ToLower() == categoryName.ToLower()).FirstOrDefault();
+            //return _context.Categories.Where(x => x.Name.ToLower() == categoryName.ToLower()).FirstOrDefault();
                 return this.GetFirstOrDefault(x => x.Name.ToLower() == categoryName.ToLower());
-            }
-            catch
-            {
-                return null;
-            }
         }
 
 

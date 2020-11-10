@@ -35,15 +35,6 @@ namespace MVC.Controllers
 
         public async Task<IActionResult> Index()
         {
-
-            if (TempData["CategoryProcessStatus"] != null && TempData["CategoryResponseMessage"] != null)
-            {
-                ViewBag.CategoryProcessStatus = TempData["CategoryProcessStatus"].ToString();
-                ViewBag.CategoryResponseMessage = TempData["CategoryResponseMessage"].ToString();
-            }
-
-
-
             var categories = await _categoryApiService.GetAllWithProducts();
 
             return View(categories.Data);
@@ -54,7 +45,6 @@ namespace MVC.Controllers
         [HttpGet]
         public  IActionResult Add()
         {
-
             return View();
         }
 
